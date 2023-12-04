@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif, FontAwesome;
+}
+
+/* Color Palette */
+body {
+  background-color: #011936;
+}
+body .navMenu {
+  text-align: center;
+  padding: 0.5rem;
+}
+body .navMenu .active {
+  color: #ED254E;
+  text-shadow: 0px 0px 8px rgb(237, 37, 78);
+}
+body .navMenu a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 1em;
+  border-right: 2px dotted #ED254E;
+  transition: all 0.2s ease-in-out;
+}
+body .navMenu a:last-child {
+  border-right: 0;
+}
+body .navMenu a:hover {
+  color: #ED254E;
+}
+body .container, body .transform-properties, body .column, body .transform-preview, body .preview, body .shadow-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+body .container {
+  min-height: 90vh;
+  gap: 15px;
+}
+body .container .transform-card-container, body .container .code-container {
+  width: auto;
+  max-width: 650px;
+  min-width: 450px;
+  height: auto;
+  position: relative;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 5px #465362;
+  background-color: #C2EABD;
+  text-align: center;
+}
+body .container .transform-card-container #title, body .container .code-container #title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #011936;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+body .container .transform-card-container span, body .container .code-container span {
+  cursor: default;
+}
+body .container .transform-card-container .transform-properties, body .container .code-container .transform-properties {
+  margin: 10px 0;
+}
+body .container .transform-card-container .transform-properties .column, body .container .code-container .transform-properties .column {
+  flex-wrap: wrap;
+  width: 50%;
+  height: auto;
+  min-height: 100px;
+  padding: 5px;
+  margin: auto;
+  color: white;
+  background-color: #ED254E;
+  border: 2px solid #011936;
+  border-bottom: 0;
+}
+body .container .transform-card-container .transform-properties .column:nth-child(1), body .container .code-container .transform-properties .column:nth-child(1) {
+  border-radius: 5px 0 0 0;
+  border-right: 0;
+}
+body .container .transform-card-container .transform-properties .column:nth-child(2), body .container .code-container .transform-properties .column:nth-child(2) {
+  border-radius: 0 5px 0 0;
+  border-left: 2px dotted #011936;
+}
+body .container .transform-card-container .transform-properties .column:nth-child(3), body .container .code-container .transform-properties .column:nth-child(3) {
+  border-radius: 0;
+  border-top: 2px dotted #011936;
+  border-right: 0;
+}
+body .container .transform-card-container .transform-properties .column:nth-child(4), body .container .code-container .transform-properties .column:nth-child(4) {
+  border-radius: 0;
+  border-left: 2px dotted #011936;
+  border-top: 2px dotted #011936;
+}
+body .container .transform-card-container .transform-properties .column .input-group, body .container .code-container .transform-properties .column .input-group {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+body .container .transform-card-container .transform-properties .column .input-group label, body .container .code-container .transform-properties .column .input-group label {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 25px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+body .container .transform-card-container .transform-properties .column .input-group .form-range, body .container .code-container .transform-properties .column .input-group .form-range {
+  width: 40%;
+  min-width: 35%;
+  height: 25px;
+  cursor: pointer;
+  margin-inline: 5px !important;
+}
+body .container .transform-card-container .transform-properties .column .input-group input::-webkit-outer-spin-button, body .container .transform-card-container .transform-properties .column .input-group input::-webkit-inner-spin-button, body .container .code-container .transform-properties .column .input-group input::-webkit-outer-spin-button, body .container .code-container .transform-properties .column .input-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .container .transform-card-container .transform-properties .column .input-group input[type=number], body .container .code-container .transform-properties .column .input-group input[type=number] {
+  width: 25px;
+  height: 25px;
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+  text-align: center;
+  font-size: 9px;
+  border: 0;
+  margin: 0 !important;
+  border-radius: 5px !important;
+}
+body .container .transform-card-container .transform-properties .column .input-group span, body .container .code-container .transform-properties .column .input-group span {
+  font-size: 11px;
+  line-height: 1.75;
+  margin-left: 3px !important;
+}
+body .container .transform-card-container .transform-properties .column .input-group:last-child, body .container .code-container .transform-properties .column .input-group:last-child {
+  margin-bottom: 0;
+}
+body .container .transform-card-container .transform-properties .column:last-child, body .container .code-container .transform-properties .column:last-child {
+  width: 100%;
+  min-height: auto;
+  border-width: 2px;
+  border-style: dotted solid solid;
+  border-color: #011936;
+  border-radius: 0 0 5px 5px;
+}
+body .container .transform-card-container .transform-properties .column:last-child label, body .container .code-container .transform-properties .column:last-child label {
+  line-height: 1.75;
+}
+body .container .transform-card-container .transform-properties .column:last-child button, body .container .code-container .transform-properties .column:last-child button {
+  font-size: 12px;
+  line-height: 1;
+  background-color: #465362;
+  border-radius: 5px !important;
+  margin-left: 10px !important;
+  z-index: 0 !important;
+}
+body .container .transform-card-container .transform-properties .column:last-child button:hover, body .container .code-container .transform-properties .column:last-child button:hover {
+  background-color: black;
+}
+body .container .transform-card-container .transform-preview, body .container .code-container .transform-preview {
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  margin: 0;
+  pointer-events: none;
+  perspective: 200px;
+}
+body .container .transform-card-container .transform-preview .preview, body .container .code-container .transform-preview .preview {
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  transition: 0.2s;
+  background-color: #F9DC5C;
+  border: 2px solid #011936;
+  border-radius: 5px;
+}
+body .container .transform-card-container .transform-preview .preview span, body .container .code-container .transform-preview .preview span {
+  font-size: 16px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  color: #011936;
+}
+body .container .transform-card-container .info, body .container .code-container .info {
+  width: 100%;
+  display: inline-block;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #011936;
+  opacity: 0.85;
+}
+body .container .code-container {
+  width: 445px !important;
+  height: auto;
+  z-index: 1;
+}
+body .container .code-container .shadow-code {
+  flex-wrap: nowrap;
+  margin-top: 5px;
+}
+body .container .code-container .shadow-code .form-floating {
+  width: 100%;
+}
+body .container .code-container .shadow-code .form-floating textarea {
+  height: 180px;
+  border: 2px solid #011936;
+  border-radius: 5px;
+  color: #011936;
+  cursor: copy;
+  font-size: 14px;
+}
+body .container .code-container .shadow-code .form-floating textarea::-moz-selection {
+  background-color: #F9DC5C;
+}
+body .container .code-container .shadow-code .form-floating textarea::selection {
+  background-color: #F9DC5C;
+}
+body .container .code-container .shadow-code .form-floating label {
+  font-size: 14px;
+}
+body .container .code-container .shadow-code button {
+  background-color: #ED254E;
+  margin-left: 5px;
+  transition: 0.25s;
+}
+body .container .code-container .shadow-code button:hover {
+  background-color: var(--bs-btn-hover-bg);
+  scale: 1.05;
+}/*# sourceMappingURL=styles.css.map */
