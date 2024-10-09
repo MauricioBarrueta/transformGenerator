@@ -106,14 +106,12 @@ body {
                     span { 
                         font-size: 16px; letter-spacing: 1px;
                         opacity: .5; color: $oxfordBlue;
-                     }
+                    }
                 }
             }   
             .info {
                 width: 100%; display: inline-block;
-                font-size: 10px; 
-                margin-top: 5px;
-                color: $oxfordBlue; opacity: .85;
+                font-size: 10px; margin-top: 5px; color: $oxfordBlue; opacity: .75;
             } 
         }
         .code-container {
@@ -123,7 +121,7 @@ body {
                 .form-floating {
                     width: 100%;
                     textarea {
-                        height: 180px;
+                        height: 150px;
                         border: 2px solid $oxfordBlue; border-radius: 5px; color: $oxfordBlue;
                         cursor: copy; font-size: 14px;
                         &::selection { background-color: $naplesYellow; }
