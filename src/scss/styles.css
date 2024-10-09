@@ -194,7 +194,7 @@ body .container .transform-card-container .info, body .container .code-container
   font-size: 10px;
   margin-top: 5px;
   color: #011936;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 body .container .code-container {
   width: 445px !important;
@@ -209,7 +209,7 @@ body .container .code-container .shadow-code .form-floating {
   width: 100%;
 }
 body .container .code-container .shadow-code .form-floating textarea {
-  height: 180px;
+  height: 150px;
   border: 2px solid #011936;
   border-radius: 5px;
   color: #011936;
