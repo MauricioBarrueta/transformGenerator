@@ -16,24 +16,36 @@ propertiesColumns.forEach(element => {
     })
 });
 
-const generateTransformStyles = () => {   
-    let scaleCode, transCode, skewCode, rotX, rotY, rotZ
-    scaleCode = scaleX.value > 1 ? `${scaleX.value} ` : '', scaleCode += scaleY.value > 1 ? `${scaleY.value}` : ''
+const generateTransformStyles = () => {
+    const scaleCode = [ scaleX.value > 1 ? scaleX.value : '', scaleY.value > 1 ? scaleY.value : '' ]
+        .filter(Boolean)
+        .join(' ')
     transformPreview.style.scale = scaleCode
 
-    transCode = tranX.value != 0 || tranY.value != 0 || tranZ.value != 0 ? `${tranX.value}px ${tranY.value}px ${tranZ.value}px` : ''
+    const transCode = tranX.value != 0 || tranY.value != 0 || tranZ.value != 0 ? `${tranX.value}px ${tranY.value}px ${tranZ.value}px` : ''
     transformPreview.style.translate = transCode
 
-    rotX = rotateX.value > 0 ? `rotateX(${rotateX.value}deg) ` : '', rotY = rotateY.value > 0 ? `rotateY(${rotateY.value}deg) ` : '', rotZ = rotateZ.value > 0 ? `rotateZ(${rotateZ.value}deg)` : ''
+    const rotX = rotateX.value > 0 ? `rotateX(${rotateX.value}deg)` : ''
+    const rotY = rotateY.value > 0 ? `rotateY(${rotateY.value}deg)` : ''
+    const rotZ = rotateZ.value > 0 ? `rotateZ(${rotateZ.value}deg)` : ''
+    const rotateCode = [rotX, rotY, rotZ].filter(Boolean).join(' ')
 
-    skewCode = skewX.value > 0 ? `${skewX.value}deg` : '', skewCode += skewY.value > 0 ? skewX.value > 0 && skewY.value > 0 ?
-        `, ${skewY.value}deg` : `${skewY.value}deg` : ''
+    const skewCode = [ skewX.value > 0 ? `${skewX.value}deg` : '', skewY.value > 0 ? `${skewY.value}deg` : '' ]
+        .filter(Boolean) //* Elimina valores vacíos
+        .join(", ") //* Convierte el array a string y agrega el caracter que se desee entre los elementos
 
-    let code = `${rotX.length > 0 ? rotX : ''} ${rotY.length > 0 ? rotY : ''} ${rotZ.length > 0 ? rotZ : ''} ${skewCode != '' ? `skew(${skewCode})` : ''}` 
-    cssCodeText.value = `${code.length > 3 ? `transform: ${code};` : ''} ${transCode != '' ? `\ntranslate: ${transCode};` : ''} ${scaleCode != '' ? `\nscale: ${scaleCode};` : ''}\n\n/* Pegar en el elemento padre */ \nperspective: 200px;`
-    
-    !code.includes('rotate') ? transformPreview.style.transform = `rotate(0deg) ${code}` : transformPreview.style.transform = code
-}       
+    const code = [ rotateCode, skewCode ? `skew(${skewCode})` : '' ]
+        .filter(Boolean)
+        .join(" ")
+
+    cssCodeText.value =
+        `${code ? `transform: ${code};` : ""}` +
+        `${transCode ? `\ntranslate: ${transCode};` : ""}` +
+        `${scaleCode ? `\nscale: ${scaleCode};` : ""}` +
+        `\n\n/* Agregar al elemento padre */\nperspective: 200px;`
+
+    transformPreview.style.transform = !code.includes("rotate") ? `rotate(0deg) ${code}` : code
+}
 
 const resetElements = () => {   
     propertiesColumns.forEach(element => { element.value = 0 });

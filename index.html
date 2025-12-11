@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link rel="stylesheet" href="src/scss/styles.css">
     <title>Style Generator: transform</title>
     <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
@@ -16,102 +16,122 @@
         <a href="https://mauriciobarrueta.github.io/textShadowGenerator/">Text Shadow</a>
         <a href="https://mauriciobarrueta.github.io/borderGenerator/">Border</a>
         <a href="https://mauriciobarrueta.github.io/borderRadiusGenerator/">Border Radius</a>
-        <a class="active">CSS Transform</a>
-        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Image Filter</a>
-        <a href="https://mauriciobarrueta.github.io/gradientBgGenerator/">CSS Gradient</a>
-        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color Picker</a>
+        <a class="active">Transform</a>
+        <a href="https://mauriciobarrueta.github.io/filterGenerator/">Filter</a>
+        <a href="https://mauriciobarrueta.github.io/gradientBgGenerator/">Gradient</a>
+        <a href="https://mauriciobarrueta.github.io/rgbaHexGenerator/">Color</a>
         <a href="https://mauriciobarrueta.github.io/glassmorphismGenerator/">Glassmorphism</a>
       </nav>
 
     <div class="container">
         <div class="transform-card-container">
-            <span id="title">1. Personaliza los valores de las funciones de la propiedad 'transform':</span>
+            <span id="title">1. Personaliza los valores de la propiedad transform:</span>
             <div class="transform-properties">
                 <div class="column">
                     <div class="input-group">
-                        <label for="rotx" class="form-label">rotateX:</label>
-                        <input type="range" class="form-range" min="0" max="360" step="1" value="5" id="rotx" oninput="rotxRange.value=rotx.value">
-                        <input type="number" id="rotxRange" min="0" max="360" step="1" value="5" oninput="rotx.value=rotxRange.value"><span>deg</span>
+                        <label for="rotx" class="form-label">rotateX</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="360" step="1" value="5" id="rotx" oninput="rotxRange.value=rotx.value">
+                            <input type="number" id="rotxRange" min="0" max="360" step="1" value="5" oninput="rotx.value=rotxRange.value"><span>deg</span>
+                        </div>
                     </div>                
                     <div class="input-group">
-                        <label for="roty" class="form-label">rotateY:</label>
-                        <input type="range" class="form-range" min="0" max="360" step="1" value="0" id="roty" oninput="rotyRange.value=roty.value">
-                        <input type="number" id="rotyRange" min="0" max="360" value="0" oninput="roty.value=rotyRange.value"><span>deg</span>
+                        <label for="roty" class="form-label">rotateY</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="360" step="1" value="0" id="roty" oninput="rotyRange.value=roty.value">
+                            <input type="number" id="rotyRange" min="0" max="360" value="0" oninput="roty.value=rotyRange.value"><span>deg</span>
+                        </div>
                     </div>
                     <div class="input-group">
-                        <label for="rotz" class="form-label">rotateZ:</label>
-                        <input type="range" class="form-range" min="0" max="360" step="1" value="0" id="rotz" oninput="rotzRange.value=rotz.value">
-                        <input type="number" id="rotzRange" min="0" max="360" step="1" value="0" oninput="rotz.value=rotzRange.value"><span>deg</span>
+                        <label for="rotz" class="form-label">rotateZ</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="360" step="1" value="0" id="rotz" oninput="rotzRange.value=rotz.value">
+                            <input type="number" id="rotzRange" min="0" max="360" step="1" value="0" oninput="rotz.value=rotzRange.value"><span>deg</span>
+                        </div>                        
                     </div>
                                      
                 </div>
                 <div class="column">
                     <div class="input-group">
-                        <label for="tranx" class="form-label">translateX:</label>
-                        <input type="range" class="form-range" min="-300" max="300" step="1" value="5" id="tranx" oninput="tranxRange.value=tranx.value">
-                        <input type="number" id="tranxRange" min="-300" max="300" step="1" value="5" oninput="tranx.value=tranxRange.value"><span>px</span>
+                        <label for="tranx" class="form-label">translateX</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="-300" max="300" step="1" value="5" id="tranx" oninput="tranxRange.value=tranx.value">
+                            <input type="number" id="tranxRange" min="-300" max="300" step="1" value="5" oninput="tranx.value=tranxRange.value"><span>px</span>
+                        </div>                        
                     </div>                
                     <div class="input-group">
-                        <label for="trany" class="form-label">translateY:</label>
-                        <input type="range" class="form-range" min="-300" max="300" step="1" value="0" id="trany" oninput="tranyRange.value=trany.value">
-                        <input type="number" id="tranyRange" min="-300" max="300" value="0" oninput="trany.value=tranyRange.value"><span>px</span>
+                        <label for="trany" class="form-label">translateY</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="-300" max="300" step="1" value="0" id="trany" oninput="tranyRange.value=trany.value">
+                            <input type="number" id="tranyRange" min="-300" max="300" value="0" oninput="trany.value=tranyRange.value"><span>px</span>
+                        </div>                        
                     </div>
                     <div class="input-group">
-                        <label for="tranz" class="form-label">translateZ:</label>
-                        <input type="range" class="form-range" min="-300" max="300" step="1" value="0" id="tranz" oninput="tranzRange.value=tranz.value">
-                        <input type="number" id="tranzRange" min="-300" max="300" step="1" value="0" oninput="tranz.value=tranzRange.value"><span>px</span>
+                        <label for="tranz" class="form-label">translateZ</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="-300" max="300" step="1" value="0" id="tranz" oninput="tranzRange.value=tranz.value">
+                            <input type="number" id="tranzRange" min="-300" max="300" step="1" value="0" oninput="tranz.value=tranzRange.value"><span>px</span>
+                        </div>                        
                     </div>                                 
                 </div>
                 <div class="column">
                     <div class="input-group">
-                        <label for="scax" class="form-label">scaleX:</label>
-                        <input type="range" class="form-range" min="1" max="10" step="0.25" value="5" id="scax" oninput="scaxRange.value=scax.value">
-                        <input type="number" id="scaxRange" min="1" max="10" step="0.25" value="5" oninput="scax.value=scaxRange.value"><span>%</span>
+                        <label for="scax" class="form-label">scaleX</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="1" max="10" step="0.25" value="5" id="scax" oninput="scaxRange.value=scax.value">
+                            <input type="number" id="scaxRange" min="1" max="10" step="0.25" value="5" oninput="scax.value=scaxRange.value"><span>%</span>
+                        </div>
                     </div>                
                     <div class="input-group">
-                        <label for="scay" class="form-label">scaleY:</label>
-                        <input type="range" class="form-range" min="1" max="10" step="0.25" value="0" id="scay" oninput="scayRange.value=scay.value">
-                        <input type="number" id="scayRange" min="1" max="10" step="0.25" value="0" oninput="scay.value=scayRange.value"><span>%</span>
+                        <label for="scay" class="form-label">scaleY</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="1" max="10" step="0.25" value="0" id="scay" oninput="scayRange.value=scay.value">
+                            <input type="number" id="scayRange" min="1" max="10" step="0.25" value="0" oninput="scay.value=scayRange.value"><span>%</span>
+                        </div>
                     </div>                                              
                 </div>
                 <div class="column">
                     <div class="input-group">
-                        <label for="skx" class="form-label">skewX:</label>
-                        <input type="range" class="form-range" min="0" max="180" step="1" value="5" id="skx" oninput="skxRange.value=skx.value">
-                        <input type="number" id="skxRange" min="0" max="180" step="1" value="5" oninput="skx.value=skxRange.value"><span>deg</span>
+                        <label for="skx" class="form-label">skewX</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="180" step="1" value="5" id="skx" oninput="skxRange.value=skx.value">
+                            <input type="number" id="skxRange" min="0" max="180" step="1" value="5" oninput="skx.value=skxRange.value"><span>deg</span>
+                        </div>                        
                     </div>                
                     <div class="input-group">
-                        <label for="sky" class="form-label">skewY:</label>
-                        <input type="range" class="form-range" min="0" max="180" step="1" value="0" id="sky" oninput="skyRange.value=sky.value">
-                        <input type="number" id="skyRange" min="0" max="180" value="0" oninput="sky.value=skyRange.value"><span>deg</span>
+                        <label for="sky" class="form-label">skewY</label>
+                        <div class="input-row">
+                            <input type="range" class="form-range" min="0" max="180" step="1" value="0" id="sky" oninput="skyRange.value=sky.value">
+                            <input type="number" id="skyRange" min="0" max="180" value="0" oninput="sky.value=skyRange.value"><span>deg</span>
+                        </div>                        
                     </div>                                                
                 </div>
                 <div class="column">
                     <div class="input-group">
-                        <button class="btn btn-dark" id="reset-btn">Restablecer valores &#xf01e;</button>
+                        <button class="btn btn-dark" id="reset-btn">Restablecer valores &nbsp;<i class="fa-solid fa-arrow-rotate-right"></i></button>
                     </div>                                      
                 </div>                
             </div>   
 
             <div class="transform-preview">
+                <span class="info">&#xf05a;&nbsp; Para que translateZ funcione, el elemento padre debe tener perspective</span>
                 <div class="preview"><span>Vista previa</span></div>
             </div>
-            <span class="info">&#xf05a;&nbsp; Para que la propiedad 'translateZ' tenga efecto es necesario agregar la propiedad 'perspective' al elemento padre &nbsp;&#xf05a;</span>
         </div>
 
         <div class="code-container">
-            <span id="title">2. Copia el código CSS dando clic en el botón:</span>
+            <span id="title">2. Copia el código CSS:</span>
             <div class="shadow-code">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="CSS-code" readonly></textarea>
                     <label for="bs-code">El código CSS se genera automáticamente:</label>
                 </div>
-                <button class="btn btn-danger copy-btn" title="Copiar código">&#xf0c5;</button>
+                <button class="btn btn-danger copy-btn" title="Copiar">&#xf0c5;</button>
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>     
     <script src="src/js/main.js"></script>
 </body>
 </html>
